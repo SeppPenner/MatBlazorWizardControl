@@ -1,0 +1,44 @@
+@page "/"
+
+@inherits IndexBase
+
+<WizardControl Steps="@RegistrationState.Steps" CurrentStep="@RegistrationState.CurrentRegistrationStep">
+    <WizardElements>
+        <WizardElement Step="0" CurrentStep="@RegistrationState.CurrentRegistrationStep">
+            <EditForm Model="@Parameters" OnValidSubmit="@Something">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div>
+                    <MatTextField @bind-Value="@Parameters.UserName" Label="username" Icon="person" IconTrailing="true" FullWidth="true" Required="true" />
+                </div>
+                <div>
+                    <MatButton Disabled="@RegistrationState.PreviousButtonDisabled" Raised="true" OnClick="OnGoToPreviousStep">Previous</MatButton>
+                </div>
+                <div>
+                    <MatButton Disabled="@RegistrationState.NextButtonDisabled" Type="submit" Raised="true" OnClick="OnGoToNextStep">Next</MatButton>
+                </div>
+            </EditForm>
+        </WizardElement>
+        <WizardElement Step="1" CurrentStep="@RegistrationState.CurrentRegistrationStep">
+            <EditForm Model="@Parameters" OnValidSubmit="@SomethingElse">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div>
+                    <MatTextField @bind-Value="@Parameters.UserName" Label="username" Icon="person" IconTrailing="true" FullWidth="true" Required="true" />
+                </div>
+                <div>
+                    <MatTextField @bind-Value="@Parameters.Name" Label="name" Icon="verified_user" IconTrailing="true" FullWidth="true" Required="true" />
+                </div>
+                <div>
+                    <MatTextField @bind-Value="@Parameters.Email" Label="email" Icon="email" IconTrailing="true" FullWidth="true" Required="true" />
+                </div>
+                <div>
+                    <MatButton Disabled="@RegistrationState.PreviousButtonDisabled" Raised="true" OnClick="OnGoToPreviousStep">Previous</MatButton>
+                </div>
+                <div>
+                    <MatButton Disabled="@RegistrationState.NextButtonDisabled" Type="submit" Raised="true" OnClick="OnGoToNextStep">Next</MatButton>
+                </div>
+            </EditForm>
+        </WizardElement>
+    </WizardElements>
+</WizardControl>

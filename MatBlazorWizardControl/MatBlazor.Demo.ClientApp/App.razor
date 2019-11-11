@@ -1,0 +1,19 @@
+﻿<MatToastContainer />
+
+<MatThemeProvider Theme="@theme">
+    <Router AppAssembly=typeof(MatBlazor.Demo.Index).Assembly>
+        <Found Context="routeData">
+            <RouteView RouteData="routeData" DefaultLayout="typeof(MatBlazor.Demo.MainLayout)" />
+        </Found>
+        <NotFound>
+            <h1>Page not found</h1>
+            <p>Sorry, but there's nothing here!</p>
+        </NotFound>
+    </Router>
+</MatThemeProvider>
+
+
+@code
+{
+    MatTheme theme = new MatTheme();
+}

@@ -1,0 +1,9 @@
+﻿@page "/"
+@namespace MatBlazor.Demo.ServerApp.Pages
+
+@{
+    Layout = "_Layout";
+}
+
+
+@(await Html.RenderComponentAsync<App>(RenderMode.ServerPrerendered))
