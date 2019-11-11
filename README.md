@@ -11,6 +11,10 @@ The executable was written and tested in .Net Core 3.1 preview.
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://raw.githubusercontent.com/SeppPenner/MatBlazorWizardControl/master/License.txt)
 [![Known Vulnerabilities](https://snyk.io/test/github/SeppPenner/MatBlazorWizardControl/badge.svg)](https://snyk.io/test/github/SeppPenner/MatBlazorWizardControl)
 
+# Further links
+* https://stackoverflow.com/questions/58105036/how-do-you-create-a-form-wizard-using-blazor
+* https://itnext.io/building-a-blazor-wizard-with-razor-components-23d652ff06e9.
+
 
 Change history
 --------------
