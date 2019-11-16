@@ -16,4 +16,8 @@
     <PackageReference Include="MatBlazor" Version="1.10.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MatBlazor.Demo\MatBlazor.Demo.csproj" />
+  </ItemGroup>
+
 </Project>

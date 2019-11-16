@@ -1,25 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using EmbeddedBlazorContent;
-using MatBlazor.Demo.Models;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components.Server;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.FileProviders.Embedded;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Primitives;
 
 namespace MatBlazor.Demo.ServerApp
 {
@@ -38,10 +23,6 @@ namespace MatBlazor.Demo.ServerApp
             //            });
             //services.AddServerSideBlazor();
 
-
-
-            services.AddSingleton<AppModel>();
-            services.AddScoped<UserAppModel>();
             services.AddMatToaster(config =>
             {
                 //example MatToaster customizations
@@ -75,9 +56,9 @@ namespace MatBlazor.Demo.ServerApp
             app.UseStaticFiles();
 
 
-            app.UseEmbeddedBlazorContent(typeof(MatBlazor.BaseMatDomComponent).Assembly);
+            app.UseEmbeddedBlazorContent(typeof(BaseMatDomComponent).Assembly);
 
-            app.UseEmbeddedBlazorContent(typeof(MatBlazor.Demo.Pages.Index).Assembly);
+            app.UseEmbeddedBlazorContent(typeof(Index).Assembly);
 
             app.UseRouting();
 
