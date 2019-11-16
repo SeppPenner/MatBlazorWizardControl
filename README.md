@@ -14,10 +14,10 @@ The executable was written and tested in .Net Core 3.1 preview.
 # How it looks like (The styling is not perfect but can be done with custom CSS easily)
 
 ## First step
-![First step]([Step1.PNG](https://github.com/SeppPenner/MatBlazorWizardControl/blob/master/Step1.PNG))
+![First step](https://github.com/SeppPenner/MatBlazorWizardControl/blob/master/Step1.PNG "First step")
 
 ## Second step
-![Second step]([Step1.PNG](https://github.com/SeppPenner/MatBlazorWizardControl/blob/master/Step2.PNG))
+![Second step](https://github.com/SeppPenner/MatBlazorWizardControl/blob/master/Step2.PNG "Second step")
 
 # Further links
 * https://stackoverflow.com/questions/58105036/how-do-you-create-a-form-wizard-using-blazor
