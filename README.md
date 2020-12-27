@@ -2,7 +2,7 @@ MatBlazorWizardControl
 ====================================
 
 MatBlazorWizardControl is an example project for a Wizard control with [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) and [MatBlazor](https://www.matblazor.com/).
-The executable was written and tested in .Net Core 3.1 preview.
+The executable was written and tested in .Net 5.0.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/w3e05mcl5g5b62ng?svg=true)](https://ci.appveyor.com/project/SeppPenner/matblazorwizardcontrol)
 [![GitHub issues](https://img.shields.io/github/issues/SeppPenner/MatBlazorWizardControl.svg)](https://github.com/SeppPenner/MatBlazorWizardControl/issues)
@@ -27,4 +27,4 @@ The executable was written and tested in .Net Core 3.1 preview.
 Change history
 --------------
 
-* **Version 1.0.0.0 (2019-11-11)** : 1.0 release.
+See the [Changelog](https://github.com/SeppPenner/MatBlazorWizardControl/blob/master/Changelog.md).

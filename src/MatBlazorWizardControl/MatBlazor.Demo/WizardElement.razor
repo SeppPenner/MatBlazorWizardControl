@@ -1,0 +1,7 @@
+﻿@using Microsoft.AspNetCore.Components
+@inherits WizardElementBase
+
+@if (this.Step == this.CurrentStep)
+{
+    <div>@this.ChildContent</div>
+}
