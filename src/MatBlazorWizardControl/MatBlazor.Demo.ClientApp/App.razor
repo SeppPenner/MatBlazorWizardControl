@@ -1,9 +1,9 @@
-﻿<MatToastContainer />
+<MatToastContainer />
 
 <MatThemeProvider Theme="@theme">
     <Router AppAssembly=typeof(MatBlazor.Demo.Index).Assembly>
         <Found Context="routeData">
-            <RouteView RouteData="routeData" DefaultLayout="typeof(MatBlazor.Demo.MainLayout)" />
+            <RouteView RouteData="@routeData" DefaultLayout="typeof(MatBlazor.Demo.MainLayout)" />
         </Found>
         <NotFound>
             <h1>Page not found</h1>

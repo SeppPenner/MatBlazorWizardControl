@@ -5,7 +5,7 @@
 <WizardControl Steps="@this.RegistrationState.Steps" CurrentStep="@this.RegistrationState.CurrentRegistrationStep">
     <WizardElements>
         <WizardElement Step="0" CurrentStep="@this.RegistrationState.CurrentRegistrationStep">
-            <EditForm Model="@this.Parameters" OnValidSubmit="@this.Something">
+            <EditForm Model="@this.Parameters" OnValidSubmit="@Something">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
                 <div>
@@ -20,7 +20,7 @@
             </EditForm>
         </WizardElement>
         <WizardElement Step="1" CurrentStep="@this.RegistrationState.CurrentRegistrationStep">
-            <EditForm Model="@this.Parameters" OnValidSubmit="@this.SomethingElse">
+            <EditForm Model="@this.Parameters" OnValidSubmit="@SomethingElse">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
                 <div>

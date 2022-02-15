@@ -1,4 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="WizardControl.razor.cs" company="Hämmer Electronics">
 //   Copyright (c) All rights reserved.
 // </copyright>
@@ -7,65 +7,63 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace MatBlazor.Demo
+namespace MatBlazor.Demo;
+
+/// <summary>
+///     The code behind class for the <see cref="WizardControl" /> page.
+/// </summary>
+public class WizardControlBase : ComponentBase
 {
-    using Microsoft.AspNetCore.Components;
+    /// <summary>
+    /// The current step.
+    /// </summary>
+    private int currentStep;
 
     /// <summary>
-    ///     The code behind class for the <see cref="WizardControl" /> page.
+    /// Gets or sets the child content.
     /// </summary>
-    public class WizardControlBase : ComponentBase
+    [Parameter]
+    [NotNull]
+    public RenderFragment? WizardElements { get; set; }
+
+    /// <summary>
+    /// Gets or sets the steps.
+    /// </summary>
+    [Parameter]
+    public int Steps { get; set; }
+
+    /// <summary>
+    /// Gets or sets the current step.
+    /// </summary>
+    [Parameter]
+    public int CurrentStep
     {
-        /// <summary>
-        /// The current step.
-        /// </summary>
-        private int currentStep;
-
-        /// <summary>
-        /// Gets or sets the child content.
-        /// </summary>
-        [Parameter]
-        public RenderFragment WizardElements { get; set; }
-
-        /// <summary>
-        /// Gets or sets the steps.
-        /// </summary>
-        [Parameter]
-        public int Steps { get; set; }
-
-        /// <summary>
-        /// Gets or sets the current step.
-        /// </summary>
-        [Parameter]
-        public int CurrentStep
+        get => this.currentStep;
+        set
         {
-            get => this.currentStep;
-            set
+            if (this.currentStep == value)
             {
-                if (this.currentStep == value)
-                {
-                    return;
-                }
-
-                this.currentStep = value;
-
-                if (value == this.Steps)
-                {
-                    this.Progress = 1;
-                }
-                else
-                {
-                    var progress = value / (double)this.Steps * 100;
-                    this.Progress = progress > 1 ? 1 : progress;
-                }
-
-                this.StateHasChanged();
+                return;
             }
-        }
 
-        /// <summary>
-        /// Gets or sets the progress of the wizard.
-        /// </summary>
-        protected double Progress { get; set; }
+            this.currentStep = value;
+
+            if (value == this.Steps)
+            {
+                this.Progress = 1;
+            }
+            else
+            {
+                var progress = value / (double)this.Steps * 100;
+                this.Progress = progress > 1 ? 1 : progress;
+            }
+
+            this.StateHasChanged();
+        }
     }
+
+    /// <summary>
+    /// Gets or sets the progress of the wizard.
+    /// </summary>
+    protected double Progress { get; set; }
 }

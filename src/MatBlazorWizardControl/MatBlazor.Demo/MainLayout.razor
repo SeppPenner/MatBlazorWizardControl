@@ -1,4 +1,4 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
 
 <MatAppBar Style="z-index: 100;" Class="mat">
     <MatAppBarRow>
@@ -37,11 +37,14 @@
 
 @code {
 
-    BaseMatIconButton themeButton;
-    BaseMatMenu Menu;
+    [NotNull]
+    BaseMatIconButton? themeButton;
+
+    [NotNull]
+    BaseMatMenu? Menu;
 
     [CascadingParameter]
-    MatTheme theme { get; set; }
+    MatTheme? theme { get; set; }
 
     public string ThemePrimary
     {

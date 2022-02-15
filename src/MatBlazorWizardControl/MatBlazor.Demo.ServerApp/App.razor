@@ -1,4 +1,4 @@
-﻿<MatToastContainer/>
+<MatToastContainer/>
 
 <MatThemeProvider Theme="@theme">
     <Router AppAssembly=typeof(MatBlazor.Demo.Index).Assembly>
@@ -16,12 +16,12 @@
 {
     MatTheme theme = new MatTheme( );
 
-    private string _test1;
+    private string test1 = string.Empty;
 
     [Parameter]
     public string Test1
     {
-        get => _test1;
-        set => _test1 = value;
+        get => test1;
+        set => test1 = value;
     }
 }

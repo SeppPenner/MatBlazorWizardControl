@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Program.cs" company="Hämmer Electronics">
+// <copyright file="Program.cs" company="HÃ¤mmer Electronics">
 //   Copyright (c) All rights reserved.
 // </copyright>
 // <summary>
@@ -7,39 +7,33 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace MatBlazor.Demo.ServerApp
-{
-    using System.Threading;
+namespace MatBlazor.Demo.ServerApp;
 
-    using Microsoft.AspNetCore.Hosting;
-    using Microsoft.Extensions.Hosting;
+/// <summary>
+/// The main program.
+/// </summary>
+public class Program
+{
+    /// <summary>
+    /// The main method.
+    /// </summary>
+    /// <param name="args">The args.</param>
+    public static void Main(string[] args)
+    {
+        ThreadPool.SetMaxThreads(int.MaxValue, int.MaxValue);
+        CreateHostBuilder(args).Build().Run();
+    }
 
     /// <summary>
-    /// The main program.
+    /// Creates the host builder.
     /// </summary>
-    public class Program
-    {
-        /// <summary>
-        /// The main method.
-        /// </summary>
-        /// <param name="args">The args.</param>
-        public static void Main(string[] args)
-        {
-            ThreadPool.SetMaxThreads(int.MaxValue, int.MaxValue);
-            CreateHostBuilder(args).Build().Run();
-        }
-
-        /// <summary>
-        /// Creates the host builder.
-        /// </summary>
-        /// <param name="args">The args.</param>
-        /// <returns>The <see cref="IHostBuilder"/>.</returns>
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(
-                    webBuilder =>
-                    {
-                        webBuilder.UseStartup<Startup>();
-                    });
-    }
+    /// <param name="args">The args.</param>
+    /// <returns>The <see cref="IHostBuilder"/>.</returns>
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(
+                webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
 }
