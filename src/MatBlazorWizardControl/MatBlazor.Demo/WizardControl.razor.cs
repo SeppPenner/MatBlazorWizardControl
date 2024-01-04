@@ -36,7 +36,9 @@ public class WizardControlBase : ComponentBase
     /// Gets or sets the current step.
     /// </summary>
     [Parameter]
+#pragma warning disable BL0007 // Component parameters should be auto properties
     public int CurrentStep
+#pragma warning restore BL0007 // Component parameters should be auto properties
     {
         get => this.currentStep;
         set

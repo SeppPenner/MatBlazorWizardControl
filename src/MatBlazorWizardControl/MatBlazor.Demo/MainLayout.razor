@@ -38,19 +38,24 @@
 @code {
 
     [NotNull]
-    BaseMatIconButton? themeButton;
+    protected BaseMatIconButton? themeButton { get; set; }
 
     [NotNull]
-    BaseMatMenu? Menu;
+    protected BaseMatMenu? Menu { get; set; }
 
     [CascadingParameter]
-    MatTheme? theme { get; set; }
+    protected MatTheme? theme { get; set; }
 
     public string ThemePrimary
     {
-        get => theme.Primary;
+        get => theme?.Primary ?? string.Empty;
         set
         {
+            if (this.theme is null)
+            {
+                return;
+            }
+
             theme.Primary = value;
             theme.ThemeHasChanged();
         }
@@ -69,8 +74,6 @@
         this.Menu.OpenAsync(themeButton.Ref);
     }
 
-    bool lazySnackbarIsOpen;
-
     bool _navMenuOpened = true;
 
     void MenuButtonClicked()
@@ -88,8 +91,5 @@
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-
-        await Task.Delay(TimeSpan.FromSeconds(5)).ContinueWith((_) => { this.lazySnackbarIsOpen = true; });
     }
-
 }
